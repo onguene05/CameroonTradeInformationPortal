@@ -1,0 +1,210 @@
+﻿@model IEnumerable<CameroonTradeInformationPortal.Models.Article>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+<section class="wrapper">
+    <div class="table-agile-info">
+        <div>
+            <a asp-action="Create" class="btn mini all">Create New</a>
+        </div>
+        <div class="panel-body minimal">
+            <div class="mail-option">
+                <div class="chk-all">
+                    <div class="pull-left mail-checkbox ">
+                        <input type="checkbox" class="">
+                    </div>
+
+                    <div class="btn-group">
+                        <a data-toggle="dropdown" href="#" class="btn mini all">
+                            All
+                            <i class="fa fa-angle-down "></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"> None</a></li>
+                            <li><a href="#"> Read</a></li>
+                            <li><a href="#"> Unread</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <a data-original-title="Refresh" data-placement="top" data-toggle="dropdown" href="#" class="btn mini tooltips">
+                        <i class=" fa fa-refresh"></i>
+                    </a>
+                </div>
+                <div class="btn-group hidden-phone">
+                    <a data-toggle="dropdown" href="#" class="btn mini blue">
+                        More
+                        <i class="fa fa-angle-down "></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="fa fa-pencil"></i> Mark as Read</a></li>
+                        <li><a href="#"><i class="fa fa-ban"></i> Spam</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <a data-toggle="dropdown" href="#" class="btn mini blue">
+                        Move to
+                        <i class="fa fa-angle-down "></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="fa fa-pencil"></i> Mark as Read</a></li>
+                        <li><a href="#"><i class="fa fa-ban"></i> Spam</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
+                    </ul>
+                </div>
+
+                <ul class="unstyled inbox-pagination">
+                    <li><span>1-50 of 124</span></li>
+                    <li>
+                        <a class="np-btn" href="#"><i class="fa fa-angle-left  pagination-left"></i></a>
+                    </li>
+                    <li>
+                        <a class="np-btn" href="#"><i class="fa fa-angle-right pagination-right"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            @*<div class="panel-heading">
+                    Tous les articles
+                </div>*@
+            <div class="row w3-res-tb">
+                <div class="col-sm-5 m-b-xs">
+                    <select class="input-sm form-control w-sm inline v-middle">
+                        <option value="0">Bulk action</option>
+                        <option value="1">Delete selected</option>
+                        <option value="2">Bulk edit</option>
+                        <option value="3">Export</option>
+                    </select>
+                    <button class="btn btn-sm btn-default">Apply</button>
+                </div>
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-3">
+                    <div class="input-group">
+                        <input type="text" class="input-sm form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                            <button class="btn btn-sm btn-default" type="button">Go!</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped b-t b-light">
+                    <thead>
+                        <tr>
+                            <th><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Titre)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Chapeau)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Contenu)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Icon)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ImageUrl)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Auteur)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DateCreation)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DateModification)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Etat)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Langue)
+                            </th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Titre)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Chapeau)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Contenu)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Icon)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ImageUrl)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Auteur)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DateCreation)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DateModification)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Etat)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Langue.Id)
+                                </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-info">Edit</a> |
+                                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-primary ml-1">Details</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger ml-1">Delete</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <footer class="panel-footer">
+                <div class="row">
+
+                    <div class="col-sm-5 text-center">
+                        <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
+                    </div>
+                    <div class="col-sm-7 text-right text-center-xs">
+                        <ul class="pagination pagination-sm m-t-none m-b-none">
+                            <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
+                            <li><a href="">1</a></li>
+                            <li><a href="">2</a></li>
+                            <li><a href="">3</a></li>
+                            <li><a href="">4</a></li>
+                            <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</section>
